@@ -1,0 +1,101 @@
+product_id,category,sub_category,color,size
+1,Shoes,T-shirt,Black,XL
+2,Accessory,Pants,Black,L
+3,Accessory,Bag,Blue,M
+4,Clothing,Sports Shoes,Blue,XL
+5,Shoes,High Heels,Black,L
+6,Shoes,Bag,Red,M
+7,Shoes,Pants,Red,XL
+8,Accessory,Hat,White,M
+9,Shoes,Sports Shoes,White,L
+10,Accessory,Dress,Red,XL
+11,Shoes,Pants,Black,M
+12,Accessory,High Heels,White,L
+13,Clothing,Bag,Blue,S
+14,Accessory,Dress,Blue,M
+15,Clothing,Hat,Blue,XL
+16,Shoes,Bag,Blue,XL
+17,Accessory,Dress,White,M
+18,Shoes,Hat,Red,S
+19,Shoes,Hat,Black,M
+20,Shoes,Pants,Black,L
+21,Shoes,Hat,Blue,L
+22,Shoes,Sports Shoes,Blue,XL
+23,Shoes,Bag,Blue,L
+24,Accessory,Pants,Red,S
+25,Clothing,Hat,Blue,S
+26,Accessory,Pants,Black,M
+27,Clothing,Pants,Black,S
+28,Accessory,Dress,Red,S
+29,Shoes,Hat,Red,M
+30,Clothing,Dress,White,M
+31,Clothing,Hat,White,XL
+32,Accessory,T-shirt,Red,S
+33,Shoes,T-shirt,Red,XL
+34,Shoes,Hat,Blue,M
+35,Accessory,Bag,White,XL
+36,Clothing,Pants,Red,L
+37,Accessory,Sports Shoes,Black,M
+38,Clothing,High Heels,Blue,L
+39,Shoes,Bag,Red,XL
+40,Clothing,T-shirt,Blue,XL
+41,Clothing,High Heels,Red,XL
+42,Clothing,Pants,White,M
+43,Shoes,T-shirt,White,XL
+44,Clothing,Bag,Black,XL
+45,Shoes,Dress,Red,L
+46,Shoes,Bag,White,L
+47,Accessory,Pants,Red,S
+48,Accessory,Bag,Red,XL
+49,Clothing,Hat,Blue,XL
+50,Shoes,T-shirt,Red,L
+51,Clothing,Bag,Black,XL
+52,Shoes,Pants,Black,XL
+53,Shoes,Hat,Black,S
+54,Shoes,T-shirt,Blue,M
+55,Shoes,High Heels,Black,L
+56,Shoes,High Heels,Black,XL
+57,Accessory,Hat,Red,L
+58,Accessory,Pants,White,XL
+59,Accessory,High Heels,White,L
+60,Shoes,Pants,Black,XL
+61,Shoes,Sports Shoes,Blue,XL
+62,Shoes,Sports Shoes,Red,M
+63,Clothing,Sports Shoes,Blue,XL
+64,Accessory,Pants,Red,S
+65,Shoes,High Heels,Red,L
+66,Shoes,Dress,Red,S
+67,Clothing,T-shirt,Black,S
+68,Clothing,Dress,Blue,XL
+69,Accessory,Hat,Red,M
+70,Accessory,Dress,White,M
+71,Clothing,Sports Shoes,Red,S
+72,Shoes,T-shirt,Blue,XL
+73,Clothing,Hat,Black,S
+74,Clothing,T-shirt,White,L
+75,Accessory,T-shirt,Red,L
+76,Clothing,Bag,Black,M
+77,Accessory,Dress,Red,M
+78,Shoes,T-shirt,White,S
+79,Clothing,T-shirt,White,L
+80,Shoes,High Heels,Black,M
+81,Clothing,Pants,White,S
+82,Accessory,High Heels,Blue,S
+83,Clothing,Sports Shoes,White,XL
+84,Shoes,High Heels,Red,S
+85,Accessory,Hat,Red,M
+86,Shoes,Dress,Black,S
+87,Accessory,Dress,Blue,L
+88,Clothing,High Heels,White,XL
+89,Clothing,Hat,Black,S
+90,Clothing,Dress,Black,M
+91,Shoes,Pants,Red,M
+92,Accessory,T-shirt,Blue,L
+93,Accessory,Dress,Black,XL
+94,Shoes,Sports Shoes,Blue,L
+95,Accessory,High Heels,Red,M
+96,Clothing,T-shirt,Blue,M
+97,Accessory,Sports Shoes,Red,S
+98,Clothing,Bag,Black,S
+99,Clothing,Sports Shoes,Blue,XL
+100,Shoes,Hat,White,S
