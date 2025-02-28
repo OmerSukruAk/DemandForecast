@@ -87,7 +87,7 @@ for product_id in range(1,101):
 
     demand_model, optimal_stock,sales_data = demand_forecast_and_stock_optimization(merged_data, window_size_val, product_id)
 
-    save_model_name = f"models/demand_model_id{product_id}_w{window_size_val}_.pkl"
+    save_model_name = f"models/demand_model_id_w{window_size_val}_{product_id}.pkl"
     joblib.dump(demand_model, save_model_name)
 
     print(f"Model for product_id: {product_id} saved as {save_model_name}")

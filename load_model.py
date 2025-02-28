@@ -47,8 +47,8 @@ def predict_next_n_days(merged_data, next_n_day, demand_model_pkl,window_size):
     return predictions
     
 def check_if_stock_is_enough(stock, demand):
-    day_count = len(demand)
-    response = f"Current Stock Level: {stock}\n Demand Predictions for the next {day_count} days: {demand} \n Decision: " 
+    # day_count = len(demand)
+    # response = f"Current Stock Level: {stock}\n Demand Predictions for the next {day_count} days: {demand} \n Decision: " 
     if stock >= sum(demand):
         return True
         #response += f"Stock is enough for the next {day_count} days."
@@ -88,10 +88,11 @@ for product_id in range(1,101):
     print(current_stock)
 
     isEnough = check_if_stock_is_enough(current_stock, prediction_for_next_n_days)
+    
     analysis_chart_filename = ''
     if isEnough:
-        analysis_chart_filename = f'AnalysisCharts/stock_is_enough_{product_id}id_next{next_n_days}days.png'
+        analysis_chart_filename = f'AnalysisCharts/stock_is_enough/{product_id}id_next{next_n_days}days.png'
     else:
-        analysis_chart_filename = f'AnalysisCharts/stock_is_not_enough_{product_id}id_next{next_n_days}days.png'
-    plot_stock_depletion(prediction_for_next_n_days, current_stock, product_id,f'AnalysisCharts/stock_depletion_{product_id}id_next{next_n_days}days.png')
+        analysis_chart_filename = f'AnalysisCharts/stock_is_not_enough/{product_id}id_next{next_n_days}days.png'
+    plot_stock_depletion(prediction_for_next_n_days, current_stock, product_id,analysis_chart_filename)
 

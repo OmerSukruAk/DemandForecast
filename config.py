@@ -1,2 +1,2 @@
 window_size = 8
-next_n_days = 7
+next_n_days = 4
