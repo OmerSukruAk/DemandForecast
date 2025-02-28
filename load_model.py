@@ -79,7 +79,7 @@ merged_data, all_current_stock_data = read_data()
 
 for product_id in range(1,101): 
 
-    demand_model_pkl = joblib.load(f'models/demand_model_id{product_id}_w{window_size_val}_.pkl') 
+    demand_model_pkl = joblib.load(f'models/demand_model_id_w{window_size_val}_{product_id}.pkl') 
     last_n_days_sales = merged_data[merged_data['product_id'] == product_id].tail(window_size_val) # type: ignore
     current_stock = get_product_stock_by_id(all_current_stock_data, product_id)
 
