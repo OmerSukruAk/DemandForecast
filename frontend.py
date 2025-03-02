@@ -47,7 +47,7 @@ all_report_button = col1.button('Generate reports for all products')
 
 if all_report_button:
     for i in range(1,101):
-        curr_plot, stocks = st.session_state["model"].predict_demand_and_optimize_stock(forecast_days, i)
+        curr_plot, stocks, prediction_for_next_n_days = st.session_state["model"].predict_demand_and_optimize_stock(forecast_days, i)
     st.session_state["ending_stocks"], st.session_state["enough_stocks"] = create_reports()
 
 
