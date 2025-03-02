@@ -26,6 +26,8 @@ def image_to_pdf(directory, output_pdf):
 
     empty_directory(directory)
 
+    return output_pdf.split("/")[-1]
 
-image_to_pdf("AnalysisCharts/stock_is_not_enough/", "reports/Ending_Stocks.pdf")
-image_to_pdf("AnalysisCharts/stock_is_enough/", "reports/Enough_Stocks.pdf")
+
+"""image_to_pdf("AnalysisCharts/stock_is_not_enough/", "reports/Ending_Stocks.pdf")
+image_to_pdf("AnalysisCharts/stock_is_enough/", "reports/Enough_Stocks.pdf")"""

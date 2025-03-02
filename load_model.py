@@ -71,7 +71,7 @@ class ProductDemandPrediction:
             return False
 
 
-    def plot_stock_depletion(self, demand, initial_stock,product_id, isStockEnough):
+    def plot_stock_depletion(self, demand, initial_stock, product_id, isStockEnough):
         
         filename = ''
         if isStockEnough:
@@ -82,21 +82,59 @@ class ProductDemandPrediction:
         stock = [initial_stock]
         for d in demand:
             stock.append(max(stock[-1] - d, 0))  # Ensure stock doesn't go negative
-        
-        plt.figure(figsize=(8, 5))
-        plt.plot(range(len(stock)), stock, marker='o', linestyle='-', label=f'Stock Level for {product_id}')
-        plt.xlabel('Time Step')
-        plt.ylabel('Stock')
-        plt.title('Stock Depletion Over Time')
-        plt.xticks(range(len(stock)))
+
+        plt.figure(figsize=(12, 5))  # Adjust the figsize to change the height and width of the plots
+
+        # Plot Demand Graph
+        plt.subplot(1, 2, 1)
+        plt.plot(range(1,len(demand)+1), demand, marker='o', linestyle='-', label=f'Demand for {product_id}')
+        plt.xlabel('Day')
+        plt.ylabel('Demand')
+        plt.title('Demand Over Time')
+        plt.xticks(range(1,len(demand)+1))
         plt.grid(True)
         plt.legend()
+
+        # Plot Stock Graph
+        plt.subplot(1, 2, 2)
+        plt.plot(range(1,len(stock)+1), stock, marker='o', linestyle='-', label=f'Stock Level for {product_id}')
+        plt.xlabel('Day')
+        plt.ylabel('Stock')
+        plt.title('Stock Depletion Over Time')
+        plt.xticks(range(1,len(stock)+1))
+        plt.grid(True)
+        plt.legend()
+
         plt.savefig(filename) 
-        
 
         return plt, stock
+    
 
 
+    def predict_demand_and_optimize_stock(self, next_n_days, product_id):
+
+        prediction_for_next_n_days = self.predict_next_n_days(next_n_day=next_n_days, product_id=product_id)
+        print(prediction_for_next_n_days)
+
+        current_stock = self.get_product_stock_by_id(product_id)
+        print(current_stock)
+
+        isEnough = self.check_if_stock_is_enough(current_stock, prediction_for_next_n_days)
+        
+        plot, decreasing_stock = self.plot_stock_depletion(prediction_for_next_n_days, current_stock, product_id,isEnough)
+
+        return plot, decreasing_stock
+
+    def get_stock_ending_day (self, demand):
+
+        for demand_idx in range(len(demand)):
+            if demand[demand_idx] <= 0:
+                return f"Stock will be depleted in day {demand_idx + 2}"
+                
+        return "Stock will not be deplated in this period"
+
+
+"""
 model = ProductDemandPrediction()
 
 for product_id in range(1,101): 
@@ -110,3 +148,4 @@ for product_id in range(1,101):
     isEnough = model.check_if_stock_is_enough(current_stock, prediction_for_next_n_days)
     
     model.plot_stock_depletion(prediction_for_next_n_days, current_stock, product_id,isEnough)
+"""
