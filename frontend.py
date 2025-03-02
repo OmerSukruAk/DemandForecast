@@ -28,10 +28,10 @@ predict_button = col1.button('Predict')
 
 
 if predict_button:  
-    curr_plot, stocks = st.session_state["model"].predict_demand_and_optimize_stock(forecast_days, product_id)
+    curr_plot, stocks, prediction_for_next_n_days = st.session_state["model"].predict_demand_and_optimize_stock(forecast_days, product_id)
     col2.pyplot(curr_plot) # type: ignore
 
-    deplation_explanation = st.session_state["model"].get_stock_ending_day(stocks[1:])
+    deplation_explanation = st.session_state["model"].get_stock_ending_day(stocks[0],stocks[1:],prediction_for_next_n_days)
     col1.write("Explanations:")
     col1.write(deplation_explanation)
 

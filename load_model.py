@@ -123,13 +123,25 @@ class ProductDemandPrediction:
         
         plot, decreasing_stock = self.plot_stock_depletion(prediction_for_next_n_days, current_stock, product_id,isEnough)
 
-        return plot, decreasing_stock
+        return plot, decreasing_stock, prediction_for_next_n_days
 
-    def get_stock_ending_day (self, demand):
+    def get_stock_ending_day (self, curr_stock,demand, prediction_for_next_n_days):
+        result = ""
+        sum_next_n_days = sum(prediction_for_next_n_days)
+
+        result += f"Total demand for the next days are " + str(sum_next_n_days) + " orders. "
+        result += f"Currently, our stock is " + str(curr_stock) + ". "
+        
+        average_demand = int(sum_next_n_days / len(prediction_for_next_n_days))
+
+        order_val = sum_next_n_days - demand[0] + average_demand * 5  # to encounter nearly 5 days of demand 
+
+        result += f"We have to order {order_val} products to meet the demand for the next {len(prediction_for_next_n_days)-1} days. "
 
         for demand_idx in range(len(demand)):
             if demand[demand_idx] <= 0:
-                return f"Stock will be depleted in day {demand_idx + 2}"
+                result += f"Else, the stock will be depleted in {demand_idx + 2} days."
+                return result
                 
         return "Stock will not be deplated in this period"
 
