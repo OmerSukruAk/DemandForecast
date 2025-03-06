@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.svm import SVR
-from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_absolute_error, mean_squared_error, root_mean_squared_error
 from sklearn.model_selection import train_test_split
 import numpy as np
 from config import window_size
@@ -61,6 +61,11 @@ def demand_forecast_and_stock_optimization(merged_df, window_size, product_id):
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
         mae = mean_absolute_error(y_test, y_pred)
+        mse = mean_squared_error(y_test, y_pred)
+        rmse = root_mean_squared_error(y_test, y_pred)
+
+        print(mae, mse, rmse)
+
         results[name] = mae
 
     if results:
